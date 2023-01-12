@@ -1,0 +1,881 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentinel-1 products &#8212; ESA DHR monthly report</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Acronyms" href="acronyms.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">ESA DHR monthly report</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   ESA DHR monthly report
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="acronyms.html">
+   Acronyms
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Sentinel-1 products
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/S1_portals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rabaneda/dhus-nbs-report"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rabaneda/dhus-nbs-report/master?urlpath=tree/docs/S1_portals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#products-on-portals">
+   Products on portals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#missing-products">
+   Missing products
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-ingestion">
+   Data ingestion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-performance-indicators">
+   Key Performance Indicators
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Sentinel-1 products</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#products-on-portals">
+   Products on portals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#missing-products">
+   Missing products
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-ingestion">
+   Data ingestion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-performance-indicators">
+   Key Performance Indicators
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="sentinel-1-products">
+<h1>Sentinel-1 products<a class="headerlink" href="#sentinel-1-products" title="Permalink to this headline">¶</a></h1>
+<p>This section shows the performance of MET Norway DHR for Sentinel-1 products. Both, an overall status and last month status are shown below.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="section" id="products-on-portals">
+<h2>Products on portals<a class="headerlink" href="#products-on-portals" title="Permalink to this headline">¶</a></h2>
+<p>The following section contains an update on the Sentinel-1 products included in the different FEs and BEs.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/S1_portals_11_0.png" src="_images/S1_portals_11_0.png" />
+</div>
+</div>
+<p>The figure above represents the overall number of products present in the different BackEnds and FrontEnds per day for Sentinel-1.</p>
+<p>While the figure below shows a zoom on the last 30 days.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/S1_portals_13_0.png" src="_images/S1_portals_13_0.png" />
+</div>
+</div>
+<p>A 30 days table is also included for more detailed information.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>colhub.met.no</th>
+      <th>scihub.copernicues.eu</th>
+      <th>sentinelhub2.met.no</th>
+      <th>MET Norway BE</th>
+    </tr>
+    <tr>
+      <th>sensing_date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-12-13</th>
+      <td>2213</td>
+      <td>2213.0</td>
+      <td>2213.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-14</th>
+      <td>2228</td>
+      <td>2228.0</td>
+      <td>2228.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-15</th>
+      <td>2128</td>
+      <td>2128.0</td>
+      <td>2128.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-16</th>
+      <td>2294</td>
+      <td>2294.0</td>
+      <td>2294.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-17</th>
+      <td>2137</td>
+      <td>2137.0</td>
+      <td>2137.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-18</th>
+      <td>2316</td>
+      <td>2316.0</td>
+      <td>2316.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-19</th>
+      <td>2224</td>
+      <td>2224.0</td>
+      <td>2224.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-20</th>
+      <td>2117</td>
+      <td>2117.0</td>
+      <td>2117.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-21</th>
+      <td>2153</td>
+      <td>2153.0</td>
+      <td>2153.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-22</th>
+      <td>2075</td>
+      <td>2075.0</td>
+      <td>2075.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-23</th>
+      <td>2363</td>
+      <td>2363.0</td>
+      <td>2363.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-24</th>
+      <td>2203</td>
+      <td>2203.0</td>
+      <td>2203.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-25</th>
+      <td>1734</td>
+      <td>1734.0</td>
+      <td>1734.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-26</th>
+      <td>2009</td>
+      <td>2009.0</td>
+      <td>2009.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-27</th>
+      <td>2243</td>
+      <td>2243.0</td>
+      <td>2243.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-28</th>
+      <td>2362</td>
+      <td>2362.0</td>
+      <td>2362.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-29</th>
+      <td>2100</td>
+      <td>2100.0</td>
+      <td>2100.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-30</th>
+      <td>2379</td>
+      <td>2379.0</td>
+      <td>2379.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-31</th>
+      <td>2274</td>
+      <td>2274.0</td>
+      <td>2274.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-01</th>
+      <td>2157</td>
+      <td>2157.0</td>
+      <td>2157.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-02</th>
+      <td>2213</td>
+      <td>2213.0</td>
+      <td>2213.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-03</th>
+      <td>2121</td>
+      <td>2121.0</td>
+      <td>2121.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-04</th>
+      <td>2396</td>
+      <td>2396.0</td>
+      <td>2396.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-05</th>
+      <td>2164</td>
+      <td>2164.0</td>
+      <td>2164.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-06</th>
+      <td>2082</td>
+      <td>2091.0</td>
+      <td>2086.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-07</th>
+      <td>2277</td>
+      <td>2277.0</td>
+      <td>2277.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-08</th>
+      <td>2243</td>
+      <td>2243.0</td>
+      <td>2243.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-09</th>
+      <td>2389</td>
+      <td>2389.0</td>
+      <td>2389.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-10</th>
+      <td>2139</td>
+      <td>2139.0</td>
+      <td>2139.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2023-01-11</th>
+      <td>2009</td>
+      <td>2037.0</td>
+      <td>2049.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="missing-products">
+<h2>Missing products<a class="headerlink" href="#missing-products" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<p>The overall total number of Sentinel-1 products is 16700147. The number of overall Sentinel-1 missing products consists of 1384342 images. This represents that a 0% of the total was included in MET Norway DHR, while a 100% was not included.</p>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<p>The total number of Sentinel-1 products in the last 30 days is 16605742. The number of Sentinel-1 missing products during the last 30 days consists of 1326787 images. This represents that a 0% of the total was included in MET Norway DHR, while a 100% was not included.</p>
+</div>
+</div>
+</div>
+<div class="section" id="data-ingestion">
+<h2>Data ingestion<a class="headerlink" href="#data-ingestion" title="Permalink to this headline">¶</a></h2>
+<p>In this section the time difference between sensing time and ingestion time at MET norway is assessed. The ingestion time is the time at which a Sentinel product was downloaded to MET Norway BE and so, it is automatically available in at least one of the MET Norway FEs.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/S1_portals_28_1.png" src="_images/S1_portals_28_1.png" />
+</div>
+</div>
+<p>The figure above shows an overall status of the Sentinel-1 synchronization between ESA datahub and MET Norway BE. The number of products synchronized and deleted are represented by the dark and light blue lines respectively. The red line represents the timeliness.</p>
+<p>Following previous sections, the graph below shows a zoom in the last 30 days for the synchronization between ESA datahub and MET Norway BE.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/S1_portals_30_0.png" src="_images/S1_portals_30_0.png" />
+</div>
+</div>
+<p>A more detailed information is given in the table below where the last 30 days are assessed.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>size</th>
+      <th>number</th>
+      <th>timeliness</th>
+    </tr>
+    <tr>
+      <th>day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-12-13</th>
+      <td>3574.746601</td>
+      <td>2183</td>
+      <td>1.948210</td>
+    </tr>
+    <tr>
+      <th>2022-12-14</th>
+      <td>3647.625329</td>
+      <td>2282</td>
+      <td>1.963528</td>
+    </tr>
+    <tr>
+      <th>2022-12-15</th>
+      <td>3342.169003</td>
+      <td>2118</td>
+      <td>2.084126</td>
+    </tr>
+    <tr>
+      <th>2022-12-16</th>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2022-12-17</th>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2022-12-18</th>
+      <td>11311.699861</td>
+      <td>6771</td>
+      <td>2.343734</td>
+    </tr>
+    <tr>
+      <th>2022-12-19</th>
+      <td>7593.212353</td>
+      <td>4690</td>
+      <td>2.003499</td>
+    </tr>
+    <tr>
+      <th>2022-12-20</th>
+      <td>3483.224916</td>
+      <td>2120</td>
+      <td>1.831892</td>
+    </tr>
+    <tr>
+      <th>2022-12-21</th>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2022-12-22</th>
+      <td>6873.780258</td>
+      <td>4150</td>
+      <td>2.161435</td>
+    </tr>
+    <tr>
+      <th>2022-12-23</th>
+      <td>3912.488467</td>
+      <td>2351</td>
+      <td>2.018522</td>
+    </tr>
+    <tr>
+      <th>2022-12-24</th>
+      <td>3620.065831</td>
+      <td>2229</td>
+      <td>1.962128</td>
+    </tr>
+    <tr>
+      <th>2022-12-25</th>
+      <td>2703.156657</td>
+      <td>1654</td>
+      <td>1.779689</td>
+    </tr>
+    <tr>
+      <th>2022-12-26</th>
+      <td>3269.474434</td>
+      <td>2065</td>
+      <td>1.827408</td>
+    </tr>
+    <tr>
+      <th>2022-12-27</th>
+      <td>3716.876970</td>
+      <td>2276</td>
+      <td>2.080749</td>
+    </tr>
+    <tr>
+      <th>2022-12-28</th>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2022-12-29</th>
+      <td>3615.248158</td>
+      <td>2189</td>
+      <td>2.144619</td>
+    </tr>
+    <tr>
+      <th>2022-12-30</th>
+      <td>3918.958869</td>
+      <td>2311</td>
+      <td>2.206755</td>
+    </tr>
+    <tr>
+      <th>2022-12-31</th>
+      <td>3750.211562</td>
+      <td>2306</td>
+      <td>1.954444</td>
+    </tr>
+    <tr>
+      <th>2023-01-01</th>
+      <td>3527.566315</td>
+      <td>2116</td>
+      <td>1.879014</td>
+    </tr>
+    <tr>
+      <th>2023-01-02</th>
+      <td>3941.517113</td>
+      <td>2263</td>
+      <td>2.067949</td>
+    </tr>
+    <tr>
+      <th>2023-01-03</th>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2023-01-04</th>
+      <td>4031.492972</td>
+      <td>2405</td>
+      <td>2.066314</td>
+    </tr>
+    <tr>
+      <th>2023-01-05</th>
+      <td>3602.211149</td>
+      <td>2200</td>
+      <td>2.195830</td>
+    </tr>
+    <tr>
+      <th>2023-01-06</th>
+      <td>3643.801502</td>
+      <td>2186</td>
+      <td>2.006378</td>
+    </tr>
+    <tr>
+      <th>2023-01-07</th>
+      <td>3920.159825</td>
+      <td>2388</td>
+      <td>2.067088</td>
+    </tr>
+    <tr>
+      <th>2023-01-08</th>
+      <td>3651.055013</td>
+      <td>2234</td>
+      <td>2.079052</td>
+    </tr>
+    <tr>
+      <th>2023-01-09</th>
+      <td>4040.762748</td>
+      <td>2313</td>
+      <td>2.001158</td>
+    </tr>
+    <tr>
+      <th>2023-01-10</th>
+      <td>3618.660500</td>
+      <td>2178</td>
+      <td>2.086172</td>
+    </tr>
+    <tr>
+      <th>2023-01-11</th>
+      <td>3707.737217</td>
+      <td>2225</td>
+      <td>2.370462</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="key-performance-indicators">
+<h2>Key Performance Indicators<a class="headerlink" href="#key-performance-indicators" title="Permalink to this headline">¶</a></h2>
+<p>This section is under construction</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="acronyms.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Acronyms</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By MET Norway - ESA DHR team<br/>
+    
+      <div class="extra_footer">
+        <p>
+This Report is part of the ESA DHR project. (ESA Contract No. 4000136339/22/I-NS-bgh).
+<br>
+ESA is not responsible in any way for the content of this document.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro.ipynb
+chapters:
+  - file: acronyms.md
+    title: Acronyms
+  - file: S1_portals.ipynb
+    title: Sentinel-1 products
+

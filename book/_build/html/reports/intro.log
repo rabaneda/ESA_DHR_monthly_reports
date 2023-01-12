@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "/home/albertor/anaconda3/envs/jupyter/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/home/albertor/anaconda3/envs/jupyter/lib/python3.7/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/albertor/anaconda3/envs/jupyter/lib/python3.7/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/albertor/anaconda3/envs/jupyter/lib/python3.7/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/albertor/anaconda3/envs/jupyter/lib/python3.7/asyncio/base_events.py", line 583, in run_until_complete
+    return future.result()
+  File "/home/albertor/anaconda3/envs/jupyter/lib/python3.7/site-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/home/albertor/anaconda3/envs/jupyter/lib/python3.7/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/albertor/anaconda3/envs/jupyter/lib/python3.7/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from datetime import datetime
+from IPython.display import display, Markdown
+
+todays_date = str(datetime.now().date())
+month = datetime.now().strftime("%B")
+year = str(datetime.now().year)
+
+Markdown(f'# ESA DHR llmothly report for {} {}'.format(month, year))
+------------------
+
+[0;36m  File [0;32m"/tmp/ipykernel_9274/2092658932.py"[0;36m, line [0;32m8[0m
+[0;31m    Markdown(f'# ESA DHR llmothly report for {} {}'.format(month, year))[0m
+[0m            ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m f-string: empty expression not allowed
+
+SyntaxError: f-string: empty expression not allowed (2092658932.py, line 8)
+
